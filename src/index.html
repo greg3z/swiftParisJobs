@@ -9,9 +9,9 @@
 </head>
 <body>
   <nav id="nav">
-    <h1>Swift Paris Jobs</h1>
+    <h1><a href="#">Swift Paris Jobs</a></h1>
     <ul>
-      <li><a href="#">À Propos</a></li>
+      <li class="active"><a href="#">À Propos</a></li>
       <li><a href="#">Entreprises</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
@@ -24,7 +24,7 @@
         <h2>Le concept</h2>
         <p>C’est moi, Greg, développeur iOS pendant 10 ans qui m’occupe de rencontrer des entreprises qui ont des projets Swift innovants. Je les filtre et les trie afin de ne vous proposer que les projets susceptibles de vous intéresser sur le plan technique bien entendu mais surtout sur le plan humain.</p>
         <p>Le secret, pour aboutir à des mises en relation de qualité, est évidemment de bien connaitre l’industrie et la communauté des développeurs Swift mais également d’avoir une approche artisanale des développeurs et des entreprises, au cas par cas et dans la durée.</p>
-        <a href="#cta" class="btn black">En Savoir Plus</button>
+        <a href="#cta" data-scrollto="#cta" class="btn black">En Savoir Plus</button>
       </div>
     </article>
     <article>
@@ -33,14 +33,19 @@
         <h2>Le concept</h2>
         <p>C’est moi, Greg, développeur iOS pendant 10 ans qui m’occupe de rencontrer des entreprises qui ont des projets Swift innovants. Je les filtre et les trie afin de ne vous proposer que les projets susceptibles de vous intéresser sur le plan technique bien entendu mais surtout sur le plan humain.</p>
         <p>Le secret, pour aboutir à des mises en relation de qualité, est évidemment de bien connaitre l’industrie et la communauté des développeurs Swift mais également d’avoir une approche artisanale des développeurs et des entreprises, au cas par cas et dans la durée.</p>
-        <a href="#cta" class="btn black">En Savoir Plus</button>
+        <a href="#cta" data-scrollto="#cta" class="btn black">En Savoir Plus</button>
       </div>
     </article>
   </div>
   <div class="cta" id="cta">
     <h1>N'attendez pas pour me contacter !</h1>
     <p>Plus tôt nous nous rencontrons, mieux j’apprendrai à vous connaitre et plus je serai à même de trouver le poste idéal pour vous ! C’est gratuit en plus 😉</p>
-    <button class="btn white">Rencontrons nous !</button>
+    <form id="subscribe" class="subscribe">
+      <input id="email" class="email" type="email" placeholder="chris@swift.org">
+      <button class="btn white">Rencontrons nous !</button>
+    </form>
+    <div id="sending" style="display:none">Envoi en cours... 🚀</div>
+    <div id="sent"  style="display:none"></div>
   </div>
   <footer>Fait avec 🥖 à Paris</footer>
   <script src="./main.js"></script>

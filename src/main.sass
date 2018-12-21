@@ -1,4 +1,7 @@
 $tablet-breakpoint: 769px !default
+$nav-height-desktop: 75px
+$nav-height-mobile: 128px
+$anim-duration: 0.2s
 
 =mobile
   @media screen and (max-width: $tablet-breakpoint - 1px)
@@ -26,18 +29,31 @@ body
   outline: none
   border-radius: 1000px
 
+  transition: background-color $anim-duration ease, color $anim-duration ease, border-color $anim-duration ease, transform $anim-duration ease
+
   &.white
-    border: none
+    border: 3px solid #FFF
     background: #FFF
     color: #000
 
+    &:hover
+      background: transparent 
+      color: #FFF
+      transform: scale(1.03)
+    &:active
+      transform: scale(0.97)
+
   &.black
-    border: none
+    border: 3px solid #000
     background: #000
     color: #FFF
 
-$nav-height-desktop: 75px
-$nav-height-mobile: 128px
+    &:hover
+      background-color: transparent 
+      color: #000
+      transform: scale(1.03)
+    &:active
+      transform: scale(0.97)
 
 nav
   position: fixed
@@ -47,7 +63,7 @@ nav
   
   display: flex
 
-  transition: box-shadow 0.2s ease
+  transition: box-shadow $anim-duration ease
 
   flex-direction: row
   align-items: center
@@ -62,6 +78,10 @@ nav
     padding: 0
     margin: 0
 
+    a
+      color: inherit
+      text-decoration: inherit
+
   ul
     display: flex
     list-style-type: none
@@ -69,22 +89,27 @@ nav
     margin: 0
 
     & > li
-      display: flex
-      align-items: center
-      justify-content: center
-
-      padding: 1em
       text-align: center
 
+      transition: border-color $anim-duration ease
+      border-bottom: 3px solid transparent
+
+      &.active
+        border-bottom-color: #000
+      &:hover
+        border-bottom-color: #F97833
+
       a
+        display: inline-block
+        padding: 1em
         color: #000
         text-decoration: none
 
 .content
   text-align: center
-  margin-top: $nav-height-desktop
+  margin-top: calc(#{$nav-height-desktop} + 1em)
   +mobile
-    margin-top: $nav-height-mobile
+    margin-top: calc(#{$nav-height-mobile} + 1em)
 
   article
     padding: 1em
@@ -110,7 +135,7 @@ nav
       
     .text
       flex: 1 1 auto
-      padding: 10%
+      padding: 5%
       +mobile
         padding: 0
 
@@ -128,6 +153,34 @@ nav
   text-align: center
   color: #FFF
   background-image: linear-gradient(-148deg, #F97833 9%, #FA6A30 48%, #FD2221 100%)
+
+  .subscribe
+    display: flex
+
+    +mobile
+      flex-direction: column
+      align-items: stretch
+
+    .email
+      border-radius: 1000px
+      padding: 1em 2em
+      border: 2px solid #21FD9B
+      outline: none
+      font-size: 1em
+
+      margin: 1em 1em
+      +mobile
+        margin: 0em 0em
+
+  #sending
+    padding: 1em
+    font-size: 1.1em
+    font-weight: 600
+
+  #sent
+    padding: 1em
+    font-size: 1.1em
+    font-weight: 600
 
 footer
   padding: 2em 1em
