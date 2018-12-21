@@ -1,0 +1,140 @@
+$tablet-breakpoint: 769px !default
+
+=mobile
+  @media screen and (max-width: $tablet-breakpoint - 1px)
+    @content
+
+html, body
+  margin: 0
+  padding: 0
+  
+body
+  background: #FFF
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+
+.btn
+  display: inline-block
+  padding: 1em 2em
+  margin: 1em 0em
+
+  text-decoration: none
+
+  cursor: pointer
+  text-align: center
+  font-size: 1em
+  font-weight: 600
+  outline: none
+  border-radius: 1000px
+
+  &.white
+    border: none
+    background: #FFF
+    color: #000
+
+  &.black
+    border: none
+    background: #000
+    color: #FFF
+
+$nav-height-desktop: 75px
+$nav-height-mobile: 128px
+
+nav
+  position: fixed
+  top: 0
+  width: 100%
+  background: #FFF
+  
+  display: flex
+
+  transition: box-shadow 0.2s ease
+
+  flex-direction: row
+  align-items: center
+  justify-content: space-around
+  height: $nav-height-desktop
+
+  +mobile
+    flex-direction: column
+    height: $nav-height-mobile
+
+  h1
+    padding: 0
+    margin: 0
+
+  ul
+    display: flex
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+    & > li
+      display: flex
+      align-items: center
+      justify-content: center
+
+      padding: 1em
+      text-align: center
+
+      a
+        color: #000
+        text-decoration: none
+
+.content
+  text-align: center
+  margin-top: $nav-height-desktop
+  +mobile
+    margin-top: $nav-height-mobile
+
+  article
+    padding: 1em
+    display: flex
+    align-items: center
+
+    &:nth-child(even)
+      background: #FAFAFA
+      flex-direction: row
+    &:nth-child(odd)
+      flex-direction: row-reverse
+
+    +mobile
+      &:nth-child(even)
+        flex-direction: column
+      &:nth-child(odd)
+        flex-direction: column
+
+    .illustration
+      flex: 1 1 auto
+      max-width: 45%
+      object-fit: contain
+      
+    .text
+      flex: 1 1 auto
+      padding: 10%
+      +mobile
+        padding: 0
+
+    // h1
+    //   text-align: center
+
+.cta
+  padding: 2em
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+  text-align: center
+  color: #FFF
+  background-image: linear-gradient(-148deg, #F97833 9%, #FA6A30 48%, #FD2221 100%)
+
+footer
+  padding: 2em 1em
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  color: #FFF
+  background: #000
