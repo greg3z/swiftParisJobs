@@ -2,6 +2,8 @@ $tablet-breakpoint: 769px !default
 $nav-height-desktop: 75px
 $nav-height-mobile: 128px
 $anim-duration: 0.2s
+$article-text-align: left
+$logo-size: 34px
 
 =mobile
   @media screen and (max-width: $tablet-breakpoint - 1px)
@@ -74,7 +76,15 @@ nav
     flex-direction: column
     height: $nav-height-mobile
 
+  .logo
+    width: $logo-size
+    height: $logo-size
+    margin-right: 0.5em
+
   h1
+    display: flex
+    flex-direction: row
+    align-items: center
     padding: 0
     margin: 0
 
@@ -106,15 +116,22 @@ nav
         text-decoration: none
 
 .content
-  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
   margin-top: calc(#{$nav-height-desktop} + 1em)
   +mobile
     margin-top: calc(#{$nav-height-mobile} + 1em)
+
+  h1
+    max-width: 800px
+    text-align: center
 
   article
     padding: 1em
     display: flex
     align-items: center
+    justify-content: center
 
     &:nth-child(even)
       background: #FAFAFA
@@ -134,8 +151,9 @@ nav
       object-fit: contain
       
     .text
-      flex: 1 1 auto
+      flex: 0 1 480px
       padding: 5%
+      text-align: $article-text-align
       +mobile
         padding: 0
 

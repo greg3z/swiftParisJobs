@@ -39,6 +39,7 @@ $(function () {
   const sent = $('#sent')
 
   const email = $('form#subscribe #email')
+  const source = form.data('source') || ''
   form.on('submit', e => {
     e.preventDefault()
     const mail = email.val()
@@ -68,7 +69,7 @@ $(function () {
       url: 'https://script.google.com/macros/s/AKfycbwa3osxyonSZvn5QJ2u7IeMmtX8PaDAgHH9oN9IfHkf_mu5AvA/exec',
       method: 'POST',
       dataType: 'json',
-      data: { email: mail, timestamp: new Date() }
+      data: { email: mail, timestamp: new Date(), source }
     })
     .then(res => finish(null, res))
     .catch(err => finish(err))
