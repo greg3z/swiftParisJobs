@@ -17,3 +17,9 @@ yarn dev
 ```
 yarn build
 ```
+
+- Deploy a new site version
+
+```
+yarn deploy
+```
