@@ -10,6 +10,7 @@
     "deploy": "yarn build && git commit -am \"new deploy\" && git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
+    "cssnano": "^4.1.8",
     "parcel-bundler": "^1.11.0",
     "sass": "^1.15.2"
   },
