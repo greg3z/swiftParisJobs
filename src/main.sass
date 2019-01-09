@@ -132,6 +132,8 @@ nav
   h1
     max-width: 800px
     text-align: center
+    +mobile
+      margin: 1em
 
   article
     padding: 1em
@@ -157,10 +159,12 @@ nav
       object-fit: contain
       
     .text
-      flex: 0 1 480px
       padding: 5%
       text-align: $article-text-align
+
+      flex: 0 1 480px
       +mobile
+        flex: 1 1 auto
         padding: 0
 
     // h1
