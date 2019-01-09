@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "clean": "rm -rf dist",
-    "build": "yarn clean && parcel build src/index.html --public-url '.'",
+    "build": "yarn clean && parcel build src/index.html --public-url 'https://greg3z.github.io/swiftParisJobs/'",
     "deploy": "yarn build && git add . && git commit -am \"new deploy\" && git push origin master && git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
