@@ -7,7 +7,7 @@
     "dev": "parcel src/index.html",
     "clean": "rm -rf dist",
     "build": "yarn clean && parcel build src/index.html --public-url 'https://greg3z.github.io/swiftParisJobs/'",
-    "deploy": "yarn build && git add . && git commit -am \"new deploy\" && git push origin master && git subtree push --prefix dist origin gh-pages"
+    "deploy": "yarn build && git add . && git commit -am \"new deploy\" && git push origin master && git subtree push --prefix dist origin gh-pages2"
   },
   "devDependencies": {
     "cssnano": "^4.1.8",
