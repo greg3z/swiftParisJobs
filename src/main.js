@@ -67,7 +67,7 @@ $(function () {
 
     $.ajax({
       url: 'https://script.google.com/macros/s/AKfycbzChCktgAJvM8VQTkpgLPxRvqxgyCMUEuVVfV6R9cibXEgvrg/exec',
-      method: 'POST',
+      method: 'GET',
       dataType: 'json',
       data: { email: mail, timestamp: new Date(), source }
     })
